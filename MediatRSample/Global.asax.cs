@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediatRSample.IoC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,7 +20,8 @@ namespace MediatRSample
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            IoCStartUp.Configure();
+            var config = GlobalConfiguration.Configuration;
+            IoCConfig.Configure(config);
         }
     }
 }
