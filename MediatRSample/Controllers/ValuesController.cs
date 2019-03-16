@@ -1,14 +1,24 @@
-﻿using System;
+﻿using Application.Requests;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace MediatRSample.Controllers
 {
     public class ValuesController : ApiController
     {
+        private IMediator _mediator;
+
+        public ValuesController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -22,8 +32,10 @@ namespace MediatRSample.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public async Task<IHttpActionResult> Post([FromBody]UpdateRequestCommand command)
         {
+            string result = await _mediator.Send(command);
+            return Ok(result);
         }
 
         // PUT api/values/5

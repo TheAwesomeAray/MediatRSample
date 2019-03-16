@@ -1,5 +1,8 @@
-﻿using Autofac;
+﻿using Application.Requests;
+using Autofac;
+using Autofac.Integration.WebApi;
 using MediatR;
+using System.Reflection;
 using System.Web.Http;
 
 namespace MediatRSample.IoC
@@ -22,14 +25,16 @@ namespace MediatRSample.IoC
                 return t => c.Resolve(t);
             });
 
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterAssemblyTypes(typeof(UpdateRequestCommand).GetTypeInfo().Assembly).AsImplementedInterfaces();
             var container = builder.Build();
-            //config.DependencyResolver = new Au(container);
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
             // finally register our custom code (individually, or via assembly scanning)
             // - requests & handlers as transient, i.e. InstancePerDependency()
             // - pre/post-processors as scoped/per-request, i.e. InstancePerLifetimeScope()
             // - behaviors as transient, i.e. InstancePerDependency()
-            //builder.RegisterAssemblyTypes(typeof(MyType).GetTypeInfo().Assembly).AsImplementedInterfaces();
+            
         }
     }
 }

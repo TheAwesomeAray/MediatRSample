@@ -12,25 +12,11 @@ namespace MediatRSample.Controllers
 {
     public class HomeController : Controller
     {
-        private IMediator _mediator;
-
-        public HomeController(IMediator mediator)
-        {
-            this._mediator = mediator;
-        }
-
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
             
             return View();
-        }
-
-        public ActionResult Update([FromBody]UpdateRequestCommand command)
-        {
-            _mediator.Send(command);
-
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
     }
 }
