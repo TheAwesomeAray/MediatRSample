@@ -1,6 +1,6 @@
 ﻿namespace Request
 {
-    internal class ExampleRequest : IRequest
+    public class UpdateStateRequest : IRequest
     {
         public RequestStatus Status { get; set; }
 

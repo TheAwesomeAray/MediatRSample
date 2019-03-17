@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Request
+﻿namespace Request
 {
-    class RequestStatusService
+    public class RequestStatusService
     {
     }
 }
