@@ -7,7 +7,7 @@ namespace Request.Specifications
     public class StatusIsActiveSpecification : BaseSpecification<IPIMRequest>
     {
         public StatusIsActiveSpecification()
-            : base(r => r.Status != RequestStatus.Active && r.Status != RequestStatus.Pending)
+            : base(r => r.Status == RequestStatus.Active || r.Status == RequestStatus.Pending)
         { }
     }
 }

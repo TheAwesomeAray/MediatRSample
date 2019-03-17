@@ -267,6 +267,14 @@
       <Project>{946979C4-8661-4A3C-9CA5-F427F14C69EC}</Project>
       <Name>Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{b466c009-c205-41a8-b416-072990b4bf99}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Request\Request.csproj">
+      <Project>{51d14251-0ea4-46d8-80b1-a65785da922b}</Project>
+      <Name>Request</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

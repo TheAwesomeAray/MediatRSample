@@ -2,6 +2,7 @@
 {
     public interface IPIMRequest
     {
+        int StateId { get; }
         RequestStatus Status { get; }
         bool IsActive();
     }

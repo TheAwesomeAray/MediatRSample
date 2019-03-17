@@ -1,7 +1,9 @@
 ﻿using Application.Requests;
 using Autofac;
 using Autofac.Integration.WebApi;
+using Infrastructure;
 using MediatR;
+using Request.Interfaces;
 using System.Reflection;
 using System.Web.Http;
 
@@ -17,6 +19,9 @@ namespace MediatRSample.IoC
               .RegisterType<Mediator>()
               .As<IMediator>()
               .InstancePerLifetimeScope();
+
+            builder.RegisterType<RequestContext>()
+                   .As<IRequestRepository>();
 
             // request & notification handlers
             builder.Register<ServiceFactory>(context =>
