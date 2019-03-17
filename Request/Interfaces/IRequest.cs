@@ -1,8 +1,8 @@
-﻿namespace Request
+﻿namespace Request.Interfaces
 {
-    public interface IRequest
+    public interface IPIMRequest
     {
-        RequestStatus Status { get; set; }
+        RequestStatus Status { get; }
         bool IsActive();
     }
 
