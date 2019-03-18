@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using MediatR;
+using Request.Commands;
 using Request.Interfaces;
 using Request.Specifications;
 
@@ -31,7 +32,7 @@ namespace Request.Entities
         public void Approve()
         {
             Status = RequestStatus.Approved;
-            //_requests.Add(new )
+            _requests.Add(new UpdateStateCommand() { StateId = StateId });
         }
     }
 }
