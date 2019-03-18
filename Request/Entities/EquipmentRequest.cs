@@ -6,10 +6,15 @@ namespace Request.Entities
     {
         public int StateId { get; private set; }
         public RequestStatus Status { get; set; }
-
+        
         public bool IsActive()
         {
             return false;
+        }
+
+        public void Approve()
+        {
+            Status = RequestStatus.Approved;
         }
     }
 }

@@ -14,7 +14,6 @@ namespace Request.Entities
 
         private List<IRequest> _requests { get; set; } = new List<IRequest>();
         private List<INotification> _notifications { get; set; } = new List<INotification>();
-
         public IReadOnlyList<IRequest> Requests => _requests.AsReadOnly();
         public IReadOnlyList<INotification> Notifications => _notifications.AsReadOnly();
 
@@ -27,6 +26,12 @@ namespace Request.Entities
         public bool IsActive()
         {
             return new StatusIsActiveSpecification().Evaluate(this);
+        }
+
+        public void Approve()
+        {
+            Status = RequestStatus.Approved;
+            //_requests.Add(new )
         }
     }
 }

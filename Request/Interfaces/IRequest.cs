@@ -5,6 +5,7 @@
         int StateId { get; }
         RequestStatus Status { get; }
         bool IsActive();
+        void Approve();
     }
 
     public enum RequestStatus
@@ -12,7 +13,7 @@
         Pending = 1,
         Active = 2,
         Cancelled = 3,
-        Accepted = 4,
+        Approved = 4,
         Rejected = 5
     }
 }
