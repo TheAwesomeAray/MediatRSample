@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Application.Requests
+namespace Request.Commands
 {
     public class UpdateRequestCommand : IRequest<string>
     {

@@ -9,5 +9,6 @@ namespace Infrastructure
 {
     public class StateContext : DbContext
     {
+
     }
 }

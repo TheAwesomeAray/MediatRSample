@@ -28,6 +28,7 @@ namespace Infrastructure
 
         public override int SaveChanges()
         {
+            //Will have eventual consistency with following events
             var result = base.SaveChanges();
 
             var eventfulEntries = ChangeTracker.Entries<IEventful>();
