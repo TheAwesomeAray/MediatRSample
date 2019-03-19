@@ -1,8 +1,8 @@
 ﻿using MediatR;
 
-namespace Request.Commands
+namespace Request.Events
 {
-    public class ApproveRequestCommand : IRequest
+    public class RequestApprovedEvent : IRequest
     {
         public int RequestId { get; set; }
     }

@@ -2,8 +2,6 @@
 using Autofac.Integration.WebApi;
 using Infrastructure;
 using MediatR;
-using Request.Commands;
-using Request.Interfaces;
 using System.Reflection;
 using System.Web.Http;
 
