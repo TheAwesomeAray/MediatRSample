@@ -44,12 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\ApproveRequestCommand.cs" />
-    <Compile Include="Commands\UpdateRequestCommand.cs" />
-    <Compile Include="Commands\UpdateStateCommand.cs" />
+    <Compile Include="Events\RequestApprovedEvent.cs" />
     <Compile Include="Entities\EquipmentRequest.cs" />
     <Compile Include="Interfaces\IEventful.cs" />
-    <Compile Include="Interfaces\IRequest.cs" />
+    <Compile Include="Interfaces\IPIMRequest.cs" />
     <Compile Include="Interfaces\IRequestRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\UpdateStateRequest.cs" />

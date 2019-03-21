@@ -1,4 +1,6 @@
-﻿using Autofac;
+﻿using Application.Commands;
+using Application.Interfaces;
+using Autofac;
 using Autofac.Integration.WebApi;
 using Infrastructure;
 using MediatR;
